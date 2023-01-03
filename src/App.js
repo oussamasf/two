@@ -1,45 +1,16 @@
-import "./categories.style.css";
+import "./app.style.css";
+import NavBar from "./components/nav-bar/nav-bar.component";
+import { lorem } from "./constants";
+
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: "hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-    },
-    {
-      id: 2,
-      title: "jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    },
-    {
-      id: 3,
-      title: "sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    },
-    {
-      id: 4,
-      title: "womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-    },
-    {
-      id: 5,
-      title: "mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    },
-  ];
   return (
-    <div className="categories-container">
-      {categories.map(({ title, id, imageUrl }) => {
-        return (
-          <div className="category-container">
-            <img src={imageUrl} alt="" />
-            <div className="category-body-container">
-              <h2 key={id}>{title}</h2>
-              <p>shop now</p>
-            </div>
-          </div>
-        );
-      })}
+    <div className="main">
+      <NavBar />
+      <div className="paragraph">
+        <p>{lorem}</p>
+        <p>{lorem}</p>
+        <p>{lorem}</p>
+      </div>
     </div>
   );
 };

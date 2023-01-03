@@ -1,0 +1,42 @@
+.nav-bar{
+  background-color: rgb(240, 178, 8);
+  height: 70px;
+  display: flex;
+  justify-content:space-between;
+  border-bottom: solid 1px black;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  border-radius: 0px 0px 6px 6px;
+  overflow: hidden;
+
+}
+.nav-bar .logo {
+  padding-left: 20px;
+  padding-right: 5px;
+  padding-top: 10px;
+  border: solid 1px rgba(217, 118, 118, 0.01);
+}
+
+.nav-bar .other-nav {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.nav-bar .other-nav p {
+  padding-left: 20px;
+  padding-right: 5px;
+  padding-top: 10px;
+  text-align: center;
+  cursor:pointer;
+}
+.nav-bar .other-nav .get-started {
+background-color: black;
+color: aliceblue;
+border-radius: 20px;
+text-align: center;
+}
+.nav-bar .other-nav .get-started:hover {
+background-color: rgb(36, 36, 36);
+
+}
