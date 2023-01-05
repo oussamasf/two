@@ -1,0 +1,11 @@
+.head-table{
+  display: flex;
+  justify-content: space-around;
+  background-color: azure;
+  width: 25%;
+}
+
+.head-table p {
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
