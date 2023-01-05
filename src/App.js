@@ -1,21 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/home.component";
-import { Outlet } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation.component";
 
-const Thing = () => {
-  return (
-    <div>
-      <div>
-        <h1>this is a NAVBAR</h1>;
-      </div>
-      <Outlet />
-    </div>
-  );
-};
 const App = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Thing />}>
+      <Route path="/home" element={<Navigation />}>
         <Route index element={<Home />} />
       </Route>
     </Routes>
