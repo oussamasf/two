@@ -19,7 +19,7 @@ function Navigation() {
             SHOP
           </Link>
           <Link className="sign-in-link" to="/sign-in">
-            sign-in
+            SIGN IN
           </Link>
         </div>
       </div>
