@@ -21,6 +21,9 @@ function Navigation() {
           <Link className="sign-in-link" to="/sign-in">
             SIGN IN
           </Link>
+          <Link className="sign-in-link" to="/sandbox">
+            play-around
+          </Link>
         </div>
       </div>
       <Outlet />

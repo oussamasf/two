@@ -1,0 +1,25 @@
+.google-sign-in-button button{
+  background:#4285f4;
+  color:white;
+  border:none;
+  width:110px;
+  height:40px;
+  border-radius:3% ;
+}
+.google-sign-in-button img{
+  width:30px;
+  background:white;
+  border-radius:50%;
+}
+.google-sign-in-button b{
+  top: -10px;
+  left: 5px;
+  position: relative;
+}
+
+.google-sign-in-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+
