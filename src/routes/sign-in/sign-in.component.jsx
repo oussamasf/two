@@ -9,7 +9,7 @@ import {
 } from "../../utils/firebase";
 
 import "./sign-in.styles.css";
-
+import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 function SignIn() {
   //
   useEffect(() => {
@@ -47,6 +47,7 @@ function SignIn() {
         <b>Google_Redirect</b>
       </button>
       {/*  */}
+      <SignUpForm />
     </div>
   );
 }
