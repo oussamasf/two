@@ -8,14 +8,14 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase";
 
-import "./sign-in.styles.css";
+// import "./sign-in.styles.css";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 function SignIn() {
   //
   useEffect(() => {
     const fun = async () => {
       const res = await getRedirectResult(auth);
-      const userdocref = await createUserDocumentFromAuth(res.user);
+      await createUserDocumentFromAuth(res.user);
 
       console.log(res);
     };
@@ -32,18 +32,10 @@ function SignIn() {
     <div className="google-sign-in-button">
       {/*  */}
       <button onClick={logWithGoogle} type="button">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-          alt=""
-        />
         <b>Google</b>
       </button>
       {/*  */}
       <button onClick={signInWithGoogleRedirect} type="button">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-          alt=""
-        />
         <b>Google_Redirect</b>
       </button>
       {/*  */}
