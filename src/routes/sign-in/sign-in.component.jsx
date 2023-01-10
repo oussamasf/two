@@ -7,9 +7,11 @@ import {
   signInWithGoogleRedirect,
   createUserDocumentFromAuth,
 } from "../../utils/firebase";
-
-// import "./sign-in.styles.css";
+import Button from "../../components/button/button.component";
+import "./sign-in.styles.css";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
+import SignInForm from "../../components/sign-in-form/sign-in-form.component";
+
 function SignIn() {
   //
   useEffect(() => {
@@ -29,17 +31,19 @@ function SignIn() {
   };
   //
   return (
-    <div className="google-sign-in-button">
-      {/*  */}
-      <button onClick={logWithGoogle} type="button">
-        <b>Google</b>
-      </button>
-      {/*  */}
-      <button onClick={signInWithGoogleRedirect} type="button">
-        <b>Google_Redirect</b>
-      </button>
-      {/*  */}
+    <div className="sign-in-container">
+      <div>
+        <Button buttonType="google" onClick={logWithGoogle}>
+          <b>Google</b>
+        </Button>
+
+        <Button buttonType="google" onClick={signInWithGoogleRedirect}>
+          Google_Redirect
+        </Button>
+      </div>
+
       <SignUpForm />
+      <SignInForm />
     </div>
   );
 }
