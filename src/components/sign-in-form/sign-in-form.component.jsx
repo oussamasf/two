@@ -1,16 +1,14 @@
 import React from "react";
 import { useState } from "react";
-// import {
-//   createAuthUserWithEmail,
-//   createUserDocumentFromAuth,
-// } from "../../utils/firebase";
+import {
+  // createAuthUserWithEmail,
+  createUserDocumentFromAuth,
+  signInWithGooglePopup,
+  signInUserWithEmailAndPassword,
+} from "../../utils/firebase";
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.styles.scss";
 import Button from "../button/button.component";
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase";
 
 const defaultFormFields = {
   email: "",
@@ -41,7 +39,21 @@ function SignInForm() {
 
     try {
       resetFormFields();
-    } catch (error) {}
+      const response = await signInUserWithEmailAndPassword(email, password);
+      console.log(response);
+    } catch (error) {
+      //! bad practise not good for security
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("incorrect password");
+          break;
+        case "auth/user-not-found":
+          alert("no user associated with this email");
+          break;
+        default:
+          console.error("signInUserWithEmailAndPassword", error);
+      }
+    }
   };
   return (
     <div className="sign-in-container">
