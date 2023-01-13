@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   // createAuthUserWithEmail,
   createUserDocumentFromAuth,
@@ -9,6 +9,7 @@ import {
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.styles.scss";
 import Button from "../button/button.component";
+import { UserContext } from "../../contexts/users.context";
 
 const defaultFormFields = {
   email: "",
@@ -18,7 +19,7 @@ const defaultFormFields = {
 function SignInForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-
+  const { setCurrentUser } = useContext(UserContext);
   // console.log(formFields);
   //
   const signInWithGoogle = async () => {
@@ -41,6 +42,7 @@ function SignInForm() {
       resetFormFields();
       const response = await signInUserWithEmailAndPassword(email, password);
       console.log(response);
+      setCurrentUser(response.user);
     } catch (error) {
       //! bad practise not good for security
       switch (error.code) {

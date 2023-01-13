@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+
+import App from "./App";
+import { UserProvider } from "./contexts/users.context";
+// import { SandProvider } from "./contexts/sandbox.context";
 import reportWebVitals from "./reportWebVitals";
+
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      {/* <SandProvider> */}
+      <UserProvider>
+        <App />
+      </UserProvider>
+      {/* </SandProvider> */}
     </BrowserRouter>
   </React.StrictMode>
 );
