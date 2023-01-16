@@ -1,15 +1,12 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import {
-  // createAuthUserWithEmail,
-  createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInUserWithEmailAndPassword,
 } from "../../utils/firebase";
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.styles.scss";
 import Button from "../button/button.component";
-import { UserContext } from "../../contexts/users.context";
 
 const defaultFormFields = {
   email: "",
@@ -19,13 +16,10 @@ const defaultFormFields = {
 function SignInForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  const { setCurrentUser } = useContext(UserContext);
   // console.log(formFields);
   //
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userdocref = await createUserDocumentFromAuth(user);
-    console.log(userdocref);
+    await signInWithGooglePopup();
   };
   //
   const handleChange = (event) => {
@@ -42,7 +36,6 @@ function SignInForm() {
       resetFormFields();
       const response = await signInUserWithEmailAndPassword(email, password);
       console.log(response);
-      setCurrentUser(response.user);
     } catch (error) {
       //! bad practise not good for security
       switch (error.code) {
