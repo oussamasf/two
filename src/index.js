@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import { UserProvider } from "./contexts/users.context";
+import { ProductsProvider } from "./contexts/products.context";
 // import { SandProvider } from "./contexts/sandbox.context";
 import reportWebVitals from "./reportWebVitals";
 
@@ -15,7 +16,9 @@ root.render(
     <BrowserRouter>
       {/* <SandProvider> */}
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <App />
+        </ProductsProvider>
       </UserProvider>
       {/* </SandProvider> */}
     </BrowserRouter>

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/home.component";
 import Auth from "./routes/authentication/auth.component";
 import SandBox from "./routes/sandbox/sign-in.component";
+import Shop from "./routes/shop/shop.component";
 import Navigation from "./routes/navigation/navigation.component";
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="auth" element={<Auth />} />
         <Route path="sandbox" element={<SandBox />} />
+        <Route path="shop" element={<Shop />} />
       </Route>
     </Routes>
   );
