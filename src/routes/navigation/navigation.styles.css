@@ -7,10 +7,12 @@
 .links-container{
   margin: 2px;
   display: flex;
+  text-align: center;
 }
-.nav-link{
-  margin: 10px;
-}
+
 .sign-in-link{
-  margin: 10px;
+  margin: auto;
+  padding: 5px;
+
 }
+
