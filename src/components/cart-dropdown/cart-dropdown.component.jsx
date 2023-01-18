@@ -15,3 +15,8 @@ function CartDropdown() {
 }
 
 export default CartDropdown;
+
+/*
+ *if (object.keys.includes(item)) { object ["item"] +=1 }
+else ()
+ */
