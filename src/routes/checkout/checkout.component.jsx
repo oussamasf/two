@@ -6,6 +6,7 @@ import "./checkout.styles.css";
 function Checkout() {
   const { cartItems } = useContext(CartContext);
   const [cartData, setCartData] = useState(cartItems);
+
   function handleIncrementClick(index) {
     const nextCounters = cartData.map((c, i) => {
       if (i === index) {
@@ -16,6 +17,22 @@ function Checkout() {
         return c;
       }
     });
+
+    setCartData(nextCounters);
+    console.log(nextCounters);
+  }
+
+  function handleDecrementClick(index) {
+    const nextCounters = cartData.map((c, i) => {
+      if (i === index) {
+        let { quantity, ...restOfC } = c;
+        quantity === 0 ? (quantity = 0) : (quantity -= 1);
+        return { quantity, ...restOfC };
+      } else {
+        return c;
+      }
+    });
+
     setCartData(nextCounters);
     console.log(nextCounters);
   }
@@ -38,7 +55,7 @@ function Checkout() {
               <td>
                 <button
                   onClick={() => {
-                    handleIncrementClick(key);
+                    handleDecrementClick(key);
                   }}
                 >
                   -
