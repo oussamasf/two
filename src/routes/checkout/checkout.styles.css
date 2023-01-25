@@ -1,0 +1,21 @@
+.checkout-container {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+table {
+  border: 2px solid rgba(67, 76, 67, 0.194);
+  width: 1000px;
+  height: 400px;
+}
+  
+th {
+  border-bottom: 1px solid black;
+}
+  
+td {
+  text-align: center;
+}
