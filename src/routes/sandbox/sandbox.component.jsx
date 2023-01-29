@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import Button from "../../components/button/button.component";
+import Countdown from "../../components/countdown/countdown.component";
 import "./sign-in.styles.css";
 
 const defaultFormFields = {
@@ -33,6 +34,7 @@ function SandBox() {
   return (
     <div className="sign-up-container">
       <h2>ADD ITEM TO CART</h2>
+      <Countdown seconds={12} />
       <form onSubmit={handleSubmit}>
         <br />
         <FormInput
