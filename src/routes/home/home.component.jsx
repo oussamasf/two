@@ -1,8 +1,6 @@
 import Directory from "../../components/directory/directory.component";
-import { SandContext } from "../../contexts/sandbox.context";
-import { useContext } from "react";
+
 const Home = () => {
-  const { a } = useContext(SandContext);
   const categories = [
     {
       id: 1,
@@ -33,8 +31,7 @@ const Home = () => {
 
   return (
     <div>
-      <p>{a}</p>
-      <Directory elements={categories} />
+      <Directory categories={categories} />
     </div>
   );
 };
